@@ -6,8 +6,16 @@ let grandPriceVar = 550;
 const seatButtons = document.getElementsByClassName('seat-btn')
 for (const seatButton of seatButtons) {
     seatButton.addEventListener('click', function () {
+
         seatButton.classList.add('bg-green-500');
         seatButton.classList.add('text-white');
+
+
+
+        if (maxSeat == 4) {
+            seatButton.setAttribute("disabled")
+            maxSeat++;
+        }
 
         // seat left js
         const seatSLeft = document.getElementById('seat-left');
@@ -62,7 +70,7 @@ for (const seatButton of seatButtons) {
         discountBtn.addEventListener('click', function () {
             const discountInput = document.getElementById('discount-input').value;
 
-            if (discountInput == 'NEW 15') {
+            if (discountInput == 'NEW15') {
                 const discountAmount = totalPriceFormate * 0.15;
                 grandPrice.innerText = totalPriceFormate - discountAmount;
                 document.getElementById('discount-div').classList.add('hidden');
@@ -74,7 +82,7 @@ for (const seatButton of seatButtons) {
                 document.getElementById('discount-div').classList.add('hidden');
             }
             else {
-                alert('Invalid Coupon')
+                alert('Invalid Coupon. Please click 4 times on ok button')
             }
 
         })
