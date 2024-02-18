@@ -7,12 +7,12 @@ const seatButtons = document.getElementsByClassName('seat-btn')
 for (const seatButton of seatButtons) {
     seatButton.addEventListener('click', function () {
 
-        seatButton.classList.add('bg-green-500');
-        seatButton.classList.add('text-white');
+        if (maxSeat !== 4) {
+            seatButton.classList.add('bg-green-500');
+            seatButton.classList.add('text-white');
+        }
 
-
-
-        if (maxSeat == 4) {
+        else if (maxSeat == 4) {
             seatButton.setAttribute("disabled")
             maxSeat++;
         }
