@@ -84,5 +84,16 @@ for (const seatButton of seatButtons) {
             location.reload();
         })
 
+
+
     })
+
+
+
+    const buyTickets = document.getElementById('buy-tickets');
+    const ticketCounter = document.getElementById('ticket-counter');
+
+    buyTickets.addEventListener('click', function () {
+        ticketCounter.scrollIntoView({ behavior: 'smooth' });
+    });
 }
