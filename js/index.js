@@ -56,9 +56,29 @@ for (const seatButton of seatButtons) {
         grandPriceFormate = grandPriceFormate + grandPriceVar;
         grandPrice.innerText = grandPriceFormate;
 
+        // discount section js
+        maxSeat++;
+        if (maxSeat == 4) {
+            document.getElementById('discount-btn').removeAttribute('disabled');
+        }
 
+        const discountBtn = document.getElementById('discount-btn')
+        discountBtn.addEventListener('click', function () {
+            const discountInput = document.getElementById('discount-input').value;
 
+            if (discountInput == 'NEW 15') {
+                const discountAmount = totalPriceFormate * 0.15;
+                grandPrice.innerText = totalPriceFormate - discountAmount;
+                document.getElementById('discount-div').classList.add('hidden');
+            }
 
+            if (discountInput == 'Couple 20') {
+                const discountAmount2 = totalPriceFormate * 0.20;
+                grandPrice.innerText = totalPriceFormate - discountAmount2;
+                document.getElementById('discount-div').classList.add('hidden');
+            }
+
+        })
 
 
 
