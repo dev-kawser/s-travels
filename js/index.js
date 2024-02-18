@@ -8,10 +8,6 @@ for (const seatButton of seatButtons) {
     seatButton.addEventListener('click', function () {
         seatButton.classList.add('bg-green-500');
         seatButton.classList.add('text-white');
-        // maxSeat++;
-        // if (maxSeat == 4) {
-
-        // }
 
         // seat left js
         const seatSLeft = document.getElementById('seat-left');
@@ -72,16 +68,21 @@ for (const seatButton of seatButtons) {
                 document.getElementById('discount-div').classList.add('hidden');
             }
 
-            if (discountInput == 'Couple 20') {
+            else if (discountInput == 'Couple 20') {
                 const discountAmount2 = totalPriceFormate * 0.20;
                 grandPrice.innerText = totalPriceFormate - discountAmount2;
                 document.getElementById('discount-div').classList.add('hidden');
+            }
+            else {
+                alert('Invalid Coupon')
             }
 
         })
 
 
-
+        document.getElementById('next-btn').addEventListener('click', function () {
+            location.reload();
+        })
 
     })
 }
